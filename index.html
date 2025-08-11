@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecione o Dispositivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Selecione seu dispositivo</h1>
+    <form id="deviceForm">
+        <div>
+            <input type="radio" id="pc" name="device" value="pc" required>
+            <label for="pc">PC</label><br>
+            <input type="radio" id="mobile" name="device" value="mobile">
+            <label for="mobile">Mobile</label><br><br>
+            <input type="submit" value="Confirmar" class="button">
+        </div>
+    </form>
+
+    <div id="content"></div>
+</div>
+
+<script>
+document.getElementById('deviceForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let device = document.querySelector('input[name="device"]:checked').value;
+    let content = document.getElementById('content');
+
+    if (device === 'pc') {
+        content.innerHTML = `
+            <h2>Conteúdo para PC</h2>
+            <h3>Tutorial</h3>
+            <a href="https://youtu.be/5wXQsCtpxqo" target="_blank" class="button">Ver Tutorial</a>
+            <h3>Wartk Menu</h3>
+            <a href="https://www.mediafire.com/file/lbsm57n1awz9ytt/WartkMenu1.3.6.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
+            <h3>Rio Rise</h3>
+            <a href="https://riorise.com/pt" target="_blank" class="button">Visitar Rio Rise</a>
+            <h3>Bluestacks</h3>
+            <a href="https://www.bluestacks.com/pt-br/index.html" target="_blank" class="button">Baixar Bluestacks</a>
+        `;
+    } else if (device === 'mobile') {
+        content.innerHTML = `
+            <h2>Conteúdo para Mobile</h2>
+            <h3>Tutorial</h3>
+            <a href="https://youtu.be/ZmcINPGQDF8" target="_blank" class="button">Ver Tutorial</a>
+            <h3>Wartk Menu</h3>
+            <a href="https://www.mediafire.com/file/lbsm57n1awz9ytt/WartkMenu1.3.6.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
+            <h3>Rio Rise</h3>
+            <a href="https://riorise.com/pt" target="_blank" class="button">Visitar Rio Rise</a>
+            <h3>Vphone (Download Direto)</h3>
+            <a href="https://www.mediafire.com/file/5dv7n35rjo4tg4x/VphoneGagaGoldForWartkMenuRioRise.zip/file" class="button">Baixar Vphone</a>
+            <h3>MT Manager</h3>
+            <a href="https://mt-manager.br.uptodown.com/android/download" target="_blank" class="button">Baixar MT Manager</a>
+            <h3>Apps Google</h3>
+            <a href="https://www.mediafire.com/file/zdcskm6ky9opyjk/Apps+Google.zip/file" target="_blank" class="button">Baixar Apps Google</a>
+            <h3>VPN (Caso queira usar)</h3>
+            <a href="https://www.mediafire.com/file/nlww5ctlion2gvx/VPN_Brazil.apk/file" target="_blank" class="button">Baixar VPN</a>
+        `;
+    }
+});
+</script>
+
+</body>
+</html>
