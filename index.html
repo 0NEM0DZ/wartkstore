@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,89 +8,154 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
             margin: 0;
             padding: 20px;
+            color: #333;
         }
+
         .container {
             max-width: 900px;
             margin: auto;
             padding: 20px;
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.5s ease-in-out;
         }
-        .button {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 16px;
-        }
+
         h1 {
             text-align: center;
+            margin-bottom: 25px;
+            color: #4f46e5;
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="radio"] {
+            accent-color: #4f46e5;
+            transform: scale(1.2);
+            margin-right: 8px;
+        }
+
+        label {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #4338ca, #7e22ce);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+        }
+
+        #content {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>Selecione seu dispositivo</h1>
-    <form id="deviceForm">
-        <div>
-            <input type="radio" id="pc" name="device" value="pc" required>
-            <label for="pc">PC</label><br>
-            <input type="radio" id="mobile" name="device" value="mobile">
-            <label for="mobile">Mobile</label><br><br>
-            <input type="submit" value="Confirmar" class="button">
-        </div>
-    </form>
+    <div class="container">
+        <h1>Selecione seu dispositivo</h1>
+        <form id="deviceForm">
+            <div>
+                <label><input type="radio" id="pc" name="device" value="pc" required> PC</label>
+                <label><input type="radio" id="MobileVphone" name="device" value="MobileVphone"> Mobile Vphone</label>
+                <label><input type="radio" id="MobileClonador" name="device" value="MobileClonador"> Mobile Clonador</label>
+                <button type="submit" class="button">Confirmar</button>
+            </div>
+        </form>
 
-    <div id="content"></div>
-</div>
+        <div id="content"></div>
+    </div>
 
-<script>
-document.getElementById('deviceForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    let device = document.querySelector('input[name="device"]:checked').value;
-    let content = document.getElementById('content');
+    <script>
+        document.getElementById('deviceForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let device = document.querySelector('input[name="device"]:checked').value;
+            let content = document.getElementById('content');
 
-    if (device === 'pc') {
-        content.innerHTML = `
-            <h2>PC</h2>
-            <h3>Tutorial</h3>
-            <a href="https://youtu.be/5wXQsCtpxqo" target="_blank" class="button">Ver Tutorial</a>
-            <h3>Wartk Menu</h3>
-            <a href="https://www.mediafire.com/file/lbsm57n1awz9ytt/WartkMenu1.3.6.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
-            <h3>Rio Rise</h3>
-            <a href="https://play.google.com/store/search?q=favela+shadows&c=apps&hl=pt_BR" target="_blank" class="button">Visitar Rio Rise</a>
-            <h3>Bluestacks</h3>
-            <a href="https://www.bluestacks.com/pt-br/index.html" target="_blank" class="button">Baixar Bluestacks</a>
-        `;
-    } else if (device === 'mobile') {
-        content.innerHTML = `
-            <h2>Mobile (Obrigatorio o Vphone!!!)</h2>
-            <h3>Tutorial</h3>
-            <a href="https://youtu.be/85u0-dF-apU" target="_blank" class="button">Ver Tutorial</a>
-            <h3>Wartk Menu</h3>
-            <a href="https://www.mediafire.com/file/umuqe67rjjwh3ap/wartk_menu(1.3.4).apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
-            <h3>Rio Rise</h3>
-            <a href="https://riorise.com/pt" target="_blank" class="button">Baixar Rio Rise</a>
-            <h3>Vphone</h3>
-            <a href="https://www.mediafire.com/file/5dv7n35rjo4tg4x/VphoneGagaGoldForWartkMenuRioRise.zip/file" class="button">Baixar Vphone</a>
-            <h3>MT Manager</h3>
-            <a href="https://mt-manager.br.uptodown.com/android/download" target="_blank" class="button">Baixar MT Manager</a>
-            <h3>Apps Google</h3>
-            <a href="https://www.mediafire.com/file/zdcskm6ky9opyjk/Apps+Google.zip/file" target="_blank" class="button">Baixar Apps Google</a>
-            <h3>VPN (Caso queira usar)</h3>
-            <a href="https://www.mediafire.com/file/nlww5ctlion2gvx/VPN_Brazil.apk/file" target="_blank" class="button">Baixar VPN</a>
-        `;
-    }
-});
-</script>
+            if (device === 'pc') {
+                content.innerHTML = `
+                    <h2>PC</h2>
+                    <h3>Tutorial</h3>
+                    <a href="https://youtu.be/5wXQsCtpxqo" target="_blank" class="button">Ver Tutorial</a>
+                    <h3>Wartk Menu</h3>
+                    <a href="https://www.mediafire.com/file/g3yl7vernh4djbk/WartkMenu1.3.6.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
+                    <h3>Rio Rise (Obrigatorio ser esse)</h3>
+                    <a href="https://riorise.com/pt" target="_blank" class="button">Visitar Rio Rise</a>
+                    <h3>Bluestacks</h3>
+                    <a href="https://www.bluestacks.com/pt-br/index.html" target="_blank" class="button">Baixar Bluestacks</a>
+                `;
+            } 
+            else if (device === 'MobileClonador') {
+                content.innerHTML = `
+                    <h2>Indisponivel</h2>
+                `;
+            } 
+            else if (device === 'MobileVphone') {
+                content.innerHTML = `
+                    <h2>Mobile (Obrigatório o Vphone!!!)</h2>
+                    <h3>Tutorial</h3>
+                    <a href="https://youtu.be/85u0-dF-apU" target="_blank" class="button">Ver Tutorial</a>
+                    <h3>Wartk Menu</h3>
+                    <a href="https://www.mediafire.com/file/g3yl7vernh4djbk/WartkMenu1.3.6.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
+                    <h3>Rio Rise (Obrigatorio ser esse)</h3>
+                    <a href="https://riorise.com/pt" target="_blank" class="button">Baixar Rio Rise</a>
+                    <h3>Vphone</h3>
+                    <a href="https://www.mediafire.com/file/5dv7n35rjo4tg4x/VphoneGagaGoldForWartkMenuRioRise.zip/file" class="button">Baixar Vphone</a>
+                    <h3>MT Manager</h3>
+                    <a href="https://mt-manager.br.uptodown.com/android/download" target="_blank" class="button">Baixar MT Manager</a>
+                    <h3>Apps Google</h3>
+                    <a href="https://www.mediafire.com/file/zdcskm6ky9opyjk/Apps+Google.zip/file" target="_blank" class="button">Baixar Apps Google</a>
+                    <h3>VPN (Caso de Erro na hora da key)</h3>
+                    <a href="https://www.mediafire.com/file/nlww5ctlion2gvx/VPN_Brazil.apk/file" target="_blank" class="button">Baixar VPN</a>
+                `;
+            }
+        });
+    </script>
 
 </body>
 </html>
