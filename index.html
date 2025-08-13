@@ -102,8 +102,8 @@
         <form id="deviceForm">
             <div>
                 <label><input type="radio" id="pc" name="device" value="pc" required> PC</label>
-                <label><input type="radio" id="MobileVphone" name="device" value="MobileVphone"> Mobile Vphone</label>
-                <label><input type="radio" id="MobileClonador" name="device" value="MobileClonador"> Mobile Clonador</label>
+                <label><input type="radio" id="MobileVphone" name="device" value="MobileVphone"> Mobile Vphone (Recomendado)</label>
+                <label><input type="radio" id="MobileClonador" name="device" value="MobileClonador"> Mobile Vphone (Varias Contas) Dificil instalação</label>
                 <button type="submit" class="button">Confirmar</button>
             </div>
         </form>
@@ -123,21 +123,31 @@
                     <h3>Tutorial</h3>
                     <a href="https://youtu.be/5wXQsCtpxqo" target="_blank" class="button">Ver Tutorial</a>
                     <h3>Wartk Menu</h3>
-                    <a href="https://www.mediafire.com/file/g3yl7vernh4djbk/WartkMenu1.3.6.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
+                    <a href="https://www.mediafire.com/file/g3yl7vernh4djbk/WartkMenu1.3.6_%2528Atualizado%2529.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
                     <h3>Rio Rise (Obrigatorio ser esse)</h3>
                     <a href="https://riorise.com/pt" target="_blank" class="button">Visitar Rio Rise</a>
                     <h3>Bluestacks 5 (Obrigatorio ser esse emulador)</h3>
                     <a href="https://www.bluestacks.com/pt-br/index.html" target="_blank" class="button">Baixar Bluestacks</a>
                 `;
             } 
-            else if (device === 'MobileClonador') {
+            else if (device === 'MobileVphone') {
                 content.innerHTML = `
-                    <h2>Indisponivel</h2>
+                    <h2>Mobile Vphone (Recomendado)</h2>
+                    <h3>Tutorial</h3>
+                    <a href="" target="_blank" class="button">Ver Tutorial</a>
+                    <h3>Wartk Menu</h3>
+                    <a href="https://www.mediafire.com/file/g3yl7vernh4djbk/WartkMenu1.3.6_%2528Atualizado%2529.apk/file" target="_blank" class="button">Baixar Wartk Menu</a>
+                    <h3>Rio Rise (Obrigatorio ser esse)</h3>
+                    <a href="https://riorise.com/pt" target="_blank" class="button">Baixar Rio Rise</a>
+                    <h3>Vphone (Obrigatorio usar ele)</h3>
+                    <a href="https://www.mediafire.com/file/03n6q4osa7iln1b/Vphone_Wartk_Menu.apk/file" class="button">Baixar Vphone</a>
+                    <h3>VPN (Caso de Erro na hora da key)</h3>
+                    <a href="https://www.mediafire.com/file/nlww5ctlion2gvx/VPN_Brazil.apk/file" target="_blank" class="button">Baixar VPN</a>
                 `;
             } 
             else if (device === 'MobileVphone') {
                 content.innerHTML = `
-                    <h2>Mobile (Obrigatório o Vphone!!!)</h2>
+                    <h2>Mobile Vphone (Varias Contas) Dificil instalação (Sem suporte nessa versão)</h2>
                     <h3>Tutorial</h3>
                     <a href="https://youtu.be/85u0-dF-apU" target="_blank" class="button">Ver Tutorial</a>
                     <h3>Wartk Menu</h3>
