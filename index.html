@@ -102,7 +102,9 @@
         <form id="deviceForm">
             <div>
                 <label><input type="radio" id="pc" name="device" value="pc" required> PC</label>
-                <label><input type="radio" id="MobileVphone" name="device" value="MobileVphone"> Mobile Vphone (Recomendado)</label>
+                <label><input type="radio" id="MobileClonador" name="device" value="MobileVphone22"> Mobile Clonador (Recomendado Facil Instalação)</label>
+                
+                <label><input type="radio" id="MobileVphone" name="device" value="MobileVphone"> Mobile Vphone (Facil Instalação)</label>
                 <label><input type="radio" id="MobileClonador" name="device" value="MobileClonador"> Mobile Vphone (Varias Contas) Dificil instalação</label>
                 <button type="submit" class="button">Confirmar</button> 
             </div>
@@ -166,6 +168,27 @@
                     <a href="https://www.mediafire.com/file/nlww5ctlion2gvx/VPN_Brazil.apk/file" target="_blank" class="button">Baixar VPN</a>
                 `;
             }
+else if (device === 'MobileVphone22') {
+    content.innerHTML = `
+        <h2>Mobile Clonador</h2>
+        <h3>Tutorial</h3>
+        <a href="link" target="_blank" class="button">Ver Tutorial</a>
+        
+        <h3>Wartk Menu</h3>
+        <a href="https://download1589.mediafire.com/zf8i9atk2m52cmt/WartkMenu1.3.6.apk" download class="button">
+            Baixar Wartk Menu
+        </a>
+        
+        <h3>Bypass</h3>
+        <a href="https://download1589.mediafire.com/zf8i9atk2m52cmt/Bypass.apk" download class="button">
+            Baixar Bypass (Obrigatório)
+        </a>
+        
+        <h3>Rio Rise (Obrigatório ser esse)</h3>
+        <a href="https://riorise.com/pt" target="_blank" class="button">Baixar Rio Rise</a>
+    `;
+}
+
         });
     </script>
 
